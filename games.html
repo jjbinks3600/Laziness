@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Games!</title>
+    <link rel="stylesheet" href="assets/code/main.css" />
+    <link
+      rel="icon"
+      href="assets/images/hammockicon.jpg"
+      sizes="16x16"
+      type="image/png"
+    />
+    <nav>
+      <a href="Navigation.html">Navigation menu</a><br />
+      <a href="index.html">Main menu</a>
+    </nav>
+  </head>
+  <body>
+    <p class="header2">
+      Natively on this site, we have a couple of games that you can play on this
+      site itself, without links or external shenanigans. Most of these are
+      listed below:
+    </p>
+    <ul id="gamelist">
+      <li><a href="games/bbs.html">Bang, Boom, Splat!</a></li>
+      <li><a href="games/bloxorz.html">Bloxorz</a></li>
+      <li><a href="games/Cookieclicker/game.html">Cookie Clicker</a></li>
+      <li><a href="games/fpadventure.html">Fancy Pants Adventure</a></li>
+      <li><a href="games/happywheels.html">Happy Wheels</a></li>
+      <li><a href="games/portalflash.html">Portal Flash Edition</a></li>
+      <li><a href="games/pottyracers.html">Potty Racers</a></li>
+      <li><a href="games/spankthemonkey.html">Spank the monkey</a></li>
+      <li><a href="games/impossiblequiz.html">The Impossible Quiz</a></li>
+    </ul>
+  </body>
+  <script>
+    function sortList() {
+      var list, i, switching, b, shouldSwitch;
+      list = document.getElementById("gamelist");
+      switching = true;
+      /* Make a loop that will continue until
+  no switching has been done: */
+      while (switching) {
+        // Start by saying: no switching is done:
+        switching = false;
+        b = list.getElementsByTagName("LI");
+        // Loop through all list items:
+        for (i = 0; i < b.length - 1; i++) {
+          // Start by saying there should be no switching:
+          shouldSwitch = false;
+          /* Check if the next item should
+      switch place with the current item: */
+          if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+            /* If next item is alphabetically lower than current item,
+        mark as a switch and break the loop: */
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          /* If a switch has been marked, make the switch
+      and mark the switch as done: */
+          b[i].parentNode.insertBefore(b[i + 1], b[i]);
+          switching = true;
+        }
+      }
+    }
+  </script>
+</html>
